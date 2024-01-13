@@ -77,7 +77,11 @@
                                             <td>{{$product->stock}}</td>
                                             <td class="text-center">
                                                 <figure class="avatar mr-2 avatar-xl">
-                                                    <img src="{{$product->image}}" title="{{$product->name}}" width="125px" height="auto">
+                                                    @if($product->image)
+                                                        <img src="{{asset('storage/products/'.$product->image)}}" title="{{$product->name}}" width="125px" height="auto">
+                                                    @else
+                                                        <span class="badge">No Image</span>
+                                                    @endif
                                                 </figure>
                                             </td>
                                             <td>{{$product->created_at}}</td>
